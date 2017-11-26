@@ -98,7 +98,12 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(testArray){ //eslint-disable-line
+function multiplyArray(testArray) { //eslint-disable-line
+  var productArray = multiply(testArray[0], testArray[1])[0];
+  var productEquals = multiply(productArray, testArray[2])[0];
+
+  var array = [productEquals, 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + productEquals + '.'];
+  return array;
 
 }
 
