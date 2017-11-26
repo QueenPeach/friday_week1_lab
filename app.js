@@ -8,13 +8,10 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
   var sumPlus = a + b;
-  var array = ['The sum of '+ a +' plus ' + b + ' is ' + sumPlus + '.'];
+  var array = [sum, 'The sum of '+ a +' plus ' + b + ' is ' + sumPlus + '.'];
   return array;
-  console.log(a + b);
 
 }
-
-sum(a, b);
 
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
@@ -30,15 +27,14 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 
 function multiply(a, b) { //eslint-disable-line
-var multi = a * b;
-var array = ['The product of ' + a + ' multiplied by ' + b + ' is ' + multi + '.'];
-return array;
-console.log('a * b');
+  var multi = a * b;
+  var array = [multiply, 'The product of ' + a + ' multiplied by ' + b + ' is ' + multi + '.'];
+  return array;
+
 }
 
-multiply(a, b);
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -51,21 +47,21 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a,b,c) { //eslint-disable-line
-    var add = sum(a,b);
-    var addSum = sum(add[0],c);
+function sumAndMultiply(a, b, c) { //eslint-disable-line
+    var add = sum(a, b);
+    var addEquals = sum(add[0], c);
 
-    var product = multiply(a,b);
-    var productSum = multiply(product[0],c);
+    var product = multiply(a, b);
+    var productEquals = multiply(product[0], c);
 
-    var array = [addSum[0], productSum[0], a + ' and ' + b + ' and ' + c + ' sum to ' + addSum[0] + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productSum[0] + '.'];
+    var array = [addEquals[0], productEquals[0], a + ' and ' + b + ' and ' + c + ' sum to ' + addEquals[0] + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productEquals[0] + '.'];
     return array;
 
   }
 
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -77,15 +73,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-var testArray = [2,3,4]; //eslint-disable-line
+var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(testArray){ //eslint-disable-line
+function sumArray(testArray) { //eslint-disable-line
+  var add = sum(testArray[0], testArray[1])[0];
+  var addEquals = sum(add, testArray[2])[0];
 
-}
+  var array = [addEquals, testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + addEquals + ' is the sum.'];
+  return array;
+
+ }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -102,6 +103,6 @@ function multiplyArray(testArray){ //eslint-disable-line
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2, 3, 4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
