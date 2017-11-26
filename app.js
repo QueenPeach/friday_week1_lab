@@ -51,9 +51,18 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a,b,c){ //eslint-disable-line
+function sumAndMultiply(a,b,c) { //eslint-disable-line
+    var add = sum(a,b);
+    var addSum = sum(add[0],c);
 
-}
+    var product = multiply(a,b);
+    var productSum = multiply(product[0],c);
+
+    var array = [addSum[0], productSum[0], a + ' and ' + b + ' and ' + c + ' sum to ' + addSum[0] + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productSum[0] + '.'];
+    return array;
+
+  }
+
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
